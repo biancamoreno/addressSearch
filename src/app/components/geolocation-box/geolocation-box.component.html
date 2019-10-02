@@ -1,0 +1,7 @@
+<div *ngIf="address && openBox">
+  <i class="material-icons" title="fechar" (click)="openBox = !openBox">close</i>
+  <p>{{address.logradouro}}</p>
+  <p>{{address.bairro}}</p>
+  <p>{{address.localidade}} - {{address.uf}}</p>
+  <p>{{address.cep}}</p>
+</div>

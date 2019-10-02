@@ -1,0 +1,5 @@
+<p>
+  Insira seu CEP para consultar o endereço
+</p>
+<app-dynamic-form [title]="'Consultar'" [fields]="regConfig" (submit)="submit($event)"></app-dynamic-form>
+<app-geolocation-box></app-geolocation-box>
