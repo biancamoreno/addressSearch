@@ -1,0 +1,49 @@
+@import '../assets/global/config';
+
+.appcontent {
+    width: 100vw;
+    height: 100vh;
+}
+
+.apppresentation {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(90deg, $blue-pool, $blue);
+
+    &__title {
+        font-size: 18px;
+    }
+
+    &__icon {
+        font-size: 26px;
+        margin-right: 5px;
+    }
+
+    &__title, &__icon {
+        &--white {
+            color: $white;
+        }
+    }
+}
+
+@include respond-to('desktop') {
+    .appcontent {
+        display: flex;
+    }
+
+    .apppresentation {
+        width: 50vw;
+        height: 100%;
+    
+        &__title {
+            font-size: 28px;
+        }
+    
+        &__icon {
+            font-size: 40px;
+            margin-right: 10px;
+        }
+    }
+}

@@ -12,6 +12,7 @@ import { ZipcodeService } from 'src/app/services/zipcode/zipcode.service';
 export class SearchEngineComponent implements OnInit {
 
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
+  address: object = {};
   regConfig: FieldConfig[] = [
     {
       type: 'input',
@@ -42,13 +43,20 @@ export class SearchEngineComponent implements OnInit {
     }
   ];
 
-  constructor(private _zipcodeService: ZipcodeService) { }
+  constructor(private _zipcodeService: ZipcodeService) {
+    this._zipcodeService.address_data.subscribe($data => {
+      if (!$data) { return; }
+      this.address = $data;
+    });
+  }
 
   ngOnInit() {
   }
 
-  submit() {
+  submitSearch() {
     const cepValue = this.form.value.cep;
+    this.address['status'] = 'loading';
+    this._zipcodeService.address_data.next(this.address);
     this._zipcodeService.searchAddress(cepValue);
   }
 

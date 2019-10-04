@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { FieldConfig, Validator } from 'src/app/interfaces/field.interface';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FieldConfig } from 'src/app/interfaces/field.interface';
 
 @Component({
   selector: 'app-dynamic-form',

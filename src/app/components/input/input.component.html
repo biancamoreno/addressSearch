@@ -1,7 +1,8 @@
 
-<mat-form-field class="demo-full-width" [formGroup]="group">
-  <input matInput [formControlName]="field.name" [placeholder]="field.label" [type]="field.inputType" mask="{{field.mask}}">
+<mat-form-field class="field" [formGroup]="group">
+  <label for="field.name" class="field__label">{{field.label}}</label>
+  <input matInput class="field__input field__input--medium" [formControlName]="field.name" placeholder="00000-000" [type]="field.inputType" mask="{{field.mask}}">
   <ng-container *ngFor="let validation of field.validations;" ngProjectAs="mat-error">
-    <mat-error *ngIf="group.get(field.name).hasError(validation.name)">{{validation.message}}</mat-error>
+    <mat-error class="field__error" *ngIf="group.get(field.name).hasError(validation.name)">{{validation.message}}</mat-error>
   </ng-container>
 </mat-form-field>

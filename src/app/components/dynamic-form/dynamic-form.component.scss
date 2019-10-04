@@ -1,0 +1,21 @@
+@import '../../../assets/global/config';
+
+.dynamicform {
+    background-color: $light-gray-container;
+    padding: 18px 20px 30px;
+    box-sizing: border-box;
+    margin-top: 15px;
+
+    &__title {
+        color: $dark-gray-font;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+}
+
+@include respond-to('desktop') {
+    .dynamicform {
+        max-width: 420px;
+        margin: 15px auto 0;
+    }
+}

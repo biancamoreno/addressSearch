@@ -1,0 +1,27 @@
+@import '../../../assets/global/config';
+
+.welcome {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__link {
+        color: $blue;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+}
+
+@include respond-to('desktop') {
+    .welcome {
+        padding: 49.5vh 10px 10px;
+        box-sizing: border-box;
+        width: 50vw;
+        height: 100%;
+
+        &__link {
+            font-size: 16px;
+            margin-top: 0;
+        }
+    }
+}

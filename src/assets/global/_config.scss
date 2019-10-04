@@ -2,7 +2,8 @@
     Sass configuration file that imports global files
 */
 
-@import './assets/global/reset';
-@import './assets/global/colors';
-@import './assets/global/typography';
-@import './assets/global/mixins';
+@import '../global/reset';
+@import '../global/colors';
+@import '../global/typography';
+@import '../global/mixins';
+@import '../global/animations';

@@ -12,10 +12,11 @@ export class ZipcodeService {
 
   constructor(private _http: HttpClient) { }
 
-  searchAddress(cep: string) {
+  searchAddress($cep: string) {
     return this._http
-      .get(`https://viacep.com.br/ws/${cep}/json/`)
+      .get(`https://viacep.com.br/ws/${$cep}/json/`)
       .subscribe($data => {
+        $data['erro'] ? $data['status'] = 'error' : $data['status'] = 'success';
         this.address_data.next($data);
       });
   }
